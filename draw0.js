@@ -31,7 +31,8 @@ document.addEventListener('keydown', function(event) {
     let col = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
 
     // Vykreslí obdélník s náhodnými parametry
-    drawSquare(x, y, size, col);
+    // drawSquare(x, y, size, col);
+    randomEllipse();
 });
 
 // Funkce pro vykreslení obdélníka na plátno s danými parametry
@@ -77,3 +78,11 @@ function drawSquare(x, y, s, col) {
     ctx.fillRect(x, y, s, s);
 }
 
+function randomEllipse() {
+    let width = Math.random() * 50 + 25;
+    let height = Math.random() * 50 + 25;
+    let col = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    let x = canvas.width - width - 20;
+    let y = canvas.height - height - 20;
+    drawEllipse(x, y, width / 2, height / 2, col);
+}
